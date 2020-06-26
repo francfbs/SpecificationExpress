@@ -25,8 +25,8 @@ namespace SpecificationExpress.Tests.Assets
             return new List<Client>()
             {
                 new Client(1, "John", true, false),
-                new Client(1, "Mark", true, true),
-                new Client(1, "Bob", false, false),
+                new Client(2, "Mark", true, true),
+                new Client(3, "Bob", false, false),
             };
         }
     }
