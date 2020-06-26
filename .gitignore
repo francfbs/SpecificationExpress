@@ -1,0 +1,6 @@
+/src/SpecificationExpress/bin/
+/src/SpecificationExpress/obj/
+/.idea/
+/SpecificationExpress.sln.DotSettings.user
+/tests/SpecificationExpress.Tests/obj/
+/tests/SpecificationExpress.Tests/bin/

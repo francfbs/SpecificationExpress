@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.1/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.1/resharper-host/local/Transient/ReSharperHost/v201/SolutionCaches/_SpecificationExpress.-690243531.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/16.5.0/build/netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/xunit.runner.visualstudio/2.4.0/build/netcoreapp1.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="SpecificationExpress.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="src/SpecificationExpress" t="IncludeRecursive">
+        <e p="ISpecification.cs" t="Include" />
+        <e p="Rule.cs" t="Include" />
+        <e p="SpecError.cs" t="Include" />
+        <e p="SpecificationExpress.csproj" t="IncludeRecursive" />
+        <e p="Validator.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="SpecificationExpress.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="tests/SpecificationExpress.Tests" t="IncludeRecursive">
+        <e p="Assets" t="Include">
+          <e p="Models" t="Include">
+            <e p="Client.cs" t="Include" />
+            <e p="Order.cs" t="Include" />
+            <e p="Product.cs" t="Include" />
+          </e>
+          <e p="Repository.cs" t="Include" />
+          <e p="Specifications" t="Include">
+            <e p="ClientMustBeActive.cs" t="Include" />
+            <e p="ClientMustBePremiumMember.cs" t="Include" />
+          </e>
+          <e p="Validations" t="Include">
+            <e p="MultipleOrderValidation.cs" t="Include" />
+            <e p="SingleOrderValidation.cs" t="Include" />
+          </e>
+        </e>
+        <e p="SpecificationExpress.Tests.csproj" t="IncludeRecursive" />
+        <e p="UnitTest1.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="SpecificationExpress.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+    </e>
+  </component>
+</project>
