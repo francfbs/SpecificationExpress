@@ -12,7 +12,7 @@ namespace SpecificationExpress.Tests
         [Fact]
         public void Single_Specification_ShouldReturn_ErrorMessage()
         {
-            //arrange
+            //arrange invalid order, client is not active
             var orderItems = new List<OrderItem>()
             {
                 new OrderItem(3, "Monitor",2, 120), //monitor
@@ -32,7 +32,7 @@ namespace SpecificationExpress.Tests
         [Fact]
         public void Single_Specification_ShouldNotReturn_Error()
         {
-            //arrange
+            //arrange valid order
             var orderItems = new List<OrderItem>()
             {
                 new OrderItem(3, "Monitor",2, 120), //monitor
@@ -50,7 +50,7 @@ namespace SpecificationExpress.Tests
         [Fact]
         public void Multiple_Specifications_ShouldReturn_ErrorMessages()
         {
-            //arrange
+            //arrange invalid order, client is not active and is not a premium member
             var orderItems = new List<OrderItem>()
             {
                 new OrderItem(3, "Monitor",2, 120), //monitor
@@ -70,7 +70,7 @@ namespace SpecificationExpress.Tests
         [Fact]
         public void Multiple_Specifications_ShouldNotReturn_Error()
         {
-            //arrange
+            //arrange a valid order
             var orderItems = new List<OrderItem>()
             {
                 new OrderItem(3, "Monitor",2, 120), //monitor
@@ -88,7 +88,7 @@ namespace SpecificationExpress.Tests
         [Fact]
         public void Complex_Specification_ShouldReturn_ErrorMessage()
         {
-            //arrange
+            //arrange invalid order, client is not active and there's no sufficient stock of the items 
             var orderItems = new List<OrderItem>()
             {
                 new OrderItem(3, "Monitor", 2, 120), //monitor
@@ -109,7 +109,7 @@ namespace SpecificationExpress.Tests
         [Fact]
         public void Complex_Specification_ShouldNotReturn_Error()
         {
-            //arrange
+            //arrange valid order
             var orderItems = new List<OrderItem>()
             {
                 new OrderItem(3, "Monitor", 1, 120), //monitor
