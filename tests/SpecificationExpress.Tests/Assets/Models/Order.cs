@@ -24,14 +24,16 @@ namespace SpecificationExpress.Tests.Assets.Models
     
     public class OrderItem
     {
-        public OrderItem(int id, double quantity, double price)
+        public OrderItem(int id, string description, double quantity, double price)
         {
             Id = id;
+            Description = description;
             Quantity = quantity;
             Price = price;
         }
 
         public int Id { get; }
+        public string Description { get; }
         public double Quantity { get; }
         public double Price { get; }
     }

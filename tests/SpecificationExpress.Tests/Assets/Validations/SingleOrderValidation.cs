@@ -7,9 +7,7 @@ namespace SpecificationExpress.Tests.Assets.Validations
     {
         public SingleOrderValidation(Repository repository)
         {
-            var clientMustBeActive = new ClientMustBeActive(repository);
-            
-            base.Add(new Rule<Order>(clientMustBeActive, "Client must be active!"));
+            Add(new Rule<Order>(new ClientMustBeActive(repository), "Client must be active!"));
         }
     }
 }

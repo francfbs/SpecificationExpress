@@ -9,14 +9,14 @@ namespace SpecificationExpress.Tests
 {
     public class UnitTest1
     {
-        [Fact(DisplayName = "Single Specification Return ErrorMessage")]
+        [Fact]
         public void Single_Specification_ShouldReturn_ErrorMessage()
         {
             //arrange
             var orderItems = new List<OrderItem>()
             {
-                new OrderItem(3, 2, 120), //monitor
-                new OrderItem(7, 1, 5) //pendrive
+                new OrderItem(3, "Monitor",2, 120), //monitor
+                new OrderItem(7, "PenDrive",1, 5) 
             };
             var order = new Order(1, DateTime.Now, 3, orderItems);
             
@@ -29,14 +29,14 @@ namespace SpecificationExpress.Tests
             Assert.Equal("Order", result[0].EntityName);
         }
         
-        [Fact(DisplayName = "Single Specification No Return Error")]
+        [Fact]
         public void Single_Specification_ShouldNotReturn_Error()
         {
             //arrange
             var orderItems = new List<OrderItem>()
             {
-                new OrderItem(3, 2, 120), //monitor
-                new OrderItem(7, 1, 5) //pendrive
+                new OrderItem(3, "Monitor",2, 120), //monitor
+                new OrderItem(7, "PenDrive",1, 5) 
             };
             var order = new Order(1, DateTime.Now, 1, orderItems);
             
@@ -47,14 +47,14 @@ namespace SpecificationExpress.Tests
             Assert.Empty(result);
         }
         
-        [Fact(DisplayName = "Multiple Specifications Return ErrorMessages")]
+        [Fact]
         public void Multiple_Specifications_ShouldReturn_ErrorMessages()
         {
             //arrange
             var orderItems = new List<OrderItem>()
             {
-                new OrderItem(3, 2, 120), //monitor
-                new OrderItem(7, 1, 5) //pendrive
+                new OrderItem(3, "Monitor",2, 120), //monitor
+                new OrderItem(7, "PenDrive",1, 5) 
             };
             var order = new Order(1, DateTime.Now, 3, orderItems);
             
@@ -67,19 +67,58 @@ namespace SpecificationExpress.Tests
             Assert.Equal("Client must be a premium member!", result[1].ErrorMessage);
         }
         
-        [Fact(DisplayName = "Multiple Specifications No Return Error")]
+        [Fact]
         public void Multiple_Specifications_ShouldNotReturn_Error()
         {
             //arrange
             var orderItems = new List<OrderItem>()
             {
-                new OrderItem(3, 2, 120), //monitor
-                new OrderItem(7, 1, 5) //pendrive
+                new OrderItem(3, "Monitor",2, 120), //monitor
+                new OrderItem(7, "PenDrive",1, 5) //pendrive
             };
             var order = new Order(1, DateTime.Now, 2, orderItems);
             
             //act
             var result = new MultipleOrderValidation(new Repository()).Validate(order);
+            
+            //assert
+            Assert.Empty(result);
+        }
+        
+        [Fact]
+        public void Complex_Specification_ShouldReturn_ErrorMessage()
+        {
+            //arrange
+            var orderItems = new List<OrderItem>()
+            {
+                new OrderItem(3, "Monitor", 2, 120), //monitor
+                new OrderItem(7, "PenDrive",12, 5) //pendrive
+            };
+            var order = new Order(1, DateTime.Now, 3, orderItems);
+            
+            //act
+            var result = new ComplexOrderValidation(new Repository(), order.Itens).Validate(order);
+            
+            //assert
+            Assert.Equal("Client must be active!", result[0].ErrorMessage);
+            Assert.Equal("Insufficient stock of the item Monitor.", result[1].ErrorMessage);
+            Assert.Equal("Insufficient stock of the item PenDrive.", result[2].ErrorMessage);
+            
+        }
+        
+        [Fact]
+        public void Complex_Specification_ShouldNotReturn_Error()
+        {
+            //arrange
+            var orderItems = new List<OrderItem>()
+            {
+                new OrderItem(3, "Monitor", 1, 120), //monitor
+                new OrderItem(7, "PenDrive",2, 5) //pendrive
+            };
+            var order = new Order(1, DateTime.Now, 2, orderItems);
+            
+            //act
+            var result = new ComplexOrderValidation(new Repository(), order.Itens).Validate(order);
             
             //assert
             Assert.Empty(result);

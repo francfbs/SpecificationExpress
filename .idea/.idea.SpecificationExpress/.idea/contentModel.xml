@@ -38,8 +38,10 @@
           <e p="Specifications" t="Include">
             <e p="ClientMustBeActive.cs" t="Include" />
             <e p="ClientMustBePremiumMember.cs" t="Include" />
+            <e p="ItemMustBeInStock.cs" t="Include" />
           </e>
           <e p="Validations" t="Include">
+            <e p="ComplexOrderValidation.cs" t="Include" />
             <e p="MultipleOrderValidation.cs" t="Include" />
             <e p="SingleOrderValidation.cs" t="Include" />
           </e>
