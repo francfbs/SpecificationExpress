@@ -6,18 +6,18 @@ namespace SpecificationExpress.Tests.Assets.Models
 {
     public class Order
     {
-        public Order(int id, DateTime date, int clientId, List<OrderItem> itens)
+        public Order(int id, DateTime date, int clientId, List<OrderItem> items)
         {
             Id = id;
             Date = date;
-            Itens = itens;
+            Items = items;
             ClientId = clientId;
-            TotalPrice = itens.Sum(i => i.Price);
+            TotalPrice = items.Sum(i => i.Price);
         }
 
         public int Id { get; }
         public DateTime Date { get; }
-        public List<OrderItem> Itens { get; }
+        public List<OrderItem> Items { get; }
         public int ClientId { get; }
         public double TotalPrice { get; }
     }

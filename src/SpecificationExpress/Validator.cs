@@ -6,12 +6,12 @@ namespace SpecificationExpress
     public abstract class Validator<T> where T : class
     {
         private List<Rule<T>> Rules { get; }
-        private List<SpecError> Errors { get; }
+        private List<SpecificationError> Errors { get; }
 
         protected Validator()
         {
             Rules = new List<Rule<T>>();
-            Errors = new List<SpecError>();
+            Errors = new List<SpecificationError>();
         }
 
         protected void Add(Rule<T> rule)
@@ -19,11 +19,11 @@ namespace SpecificationExpress
             Rules.Add(rule);
         }
         
-        public List<SpecError> Validate(T obj)
+        public List<SpecificationError> Validate(T obj)
         {
             foreach (var rule in Rules.Where(rule => !rule.Specification.IsSatisfiedBy(obj)))
             {
-                Errors.Add(new SpecError(obj.GetType().Name, rule.ErrorMessage));
+                Errors.Add(new SpecificationError(obj.GetType().Name, rule.ErrorMessage));
             }
             return Errors;
         }

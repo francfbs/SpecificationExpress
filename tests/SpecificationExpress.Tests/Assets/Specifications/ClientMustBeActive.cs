@@ -14,7 +14,7 @@ namespace SpecificationExpress.Tests.Assets.Specifications
 
         public bool IsSatisfiedBy(Order obj)
         {
-            var client = _repository.GetClients().FirstOrDefault(c => c.Id == obj.ClientId);
+            var client = Repository.GetClients().FirstOrDefault(c => c.Id == obj.ClientId);
             return client != null && client.Active;
         }
     }

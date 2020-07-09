@@ -15,7 +15,7 @@
       <e p="src/SpecificationExpress" t="IncludeRecursive">
         <e p="ISpecification.cs" t="Include" />
         <e p="Rule.cs" t="Include" />
-        <e p="SpecError.cs" t="Include" />
+        <e p="SpecificationError.cs" t="Include" />
         <e p="SpecificationExpress.csproj" t="IncludeRecursive" />
         <e p="Validator.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
@@ -47,7 +47,7 @@
           </e>
         </e>
         <e p="SpecificationExpress.Tests.csproj" t="IncludeRecursive" />
-        <e p="UnitTest1.cs" t="Include" />
+        <e p="SpecificationTests.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

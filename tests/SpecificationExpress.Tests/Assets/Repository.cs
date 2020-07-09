@@ -16,17 +16,13 @@ namespace SpecificationExpress.Tests.Assets
             new Product {Id = 6, Name = "Cooler", Price = 4, Quantity = 1},
             new Product {Id = 7, Name = "PenDrive", Price = 5, Quantity = 10},
         };
-        public List<Product> GetProducts()
-        {
-            return _productList;
-        }
-        
+
         public Product GetProductById(int id)
         {
             return _productList.FirstOrDefault(p => p.Id == id);
         }
         
-        public  List<Client> GetClients()
+        public static IEnumerable<Client> GetClients()
         {
             return new List<Client>()
             {

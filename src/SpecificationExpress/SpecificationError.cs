@@ -1,8 +1,8 @@
 namespace SpecificationExpress
 {
-    public class SpecError
+    public readonly struct SpecificationError
     {
-        public SpecError(string entityName, string errorMessage)
+        public SpecificationError(string entityName, string errorMessage)
         {
             EntityName = entityName;
             ErrorMessage = errorMessage;

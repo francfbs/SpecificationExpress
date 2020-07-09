@@ -10,9 +10,9 @@ namespace SpecificationExpress.Tests.Assets.Models
             PremiumMember = premiumMember;
         }
 
-        public int Id { get; private set; }
-        public string Name { get; private set; }
-        public bool Active { get; private set; }
-        public bool PremiumMember { get; private set; }
+        public int Id { get; }
+        public string Name { get; }
+        public bool Active { get; }
+        public bool PremiumMember { get; }
     }
 }

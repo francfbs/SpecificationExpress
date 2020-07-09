@@ -97,7 +97,7 @@ namespace SpecificationExpress.Tests
             var order = new Order(1, DateTime.Now, 3, orderItems);
             
             //act
-            var result = new ComplexOrderValidation(new Repository(), order.Itens).Validate(order);
+            var result = new ComplexOrderValidation(new Repository(), order.Items).Validate(order);
             
             //assert
             Assert.Equal("Client must be active!", result[0].ErrorMessage);
@@ -118,7 +118,7 @@ namespace SpecificationExpress.Tests
             var order = new Order(1, DateTime.Now, 2, orderItems);
             
             //act
-            var result = new ComplexOrderValidation(new Repository(), order.Itens).Validate(order);
+            var result = new ComplexOrderValidation(new Repository(), order.Items).Validate(order);
             
             //assert
             Assert.Empty(result);
