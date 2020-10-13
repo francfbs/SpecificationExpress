@@ -22,7 +22,7 @@ namespace SpecificationExpress.Tests.Assets
             return _productList.FirstOrDefault(p => p.Id == id);
         }
         
-        public static IEnumerable<Client> GetClients()
+        public IEnumerable<Client> GetClients()
         {
             return new List<Client>()
             {
