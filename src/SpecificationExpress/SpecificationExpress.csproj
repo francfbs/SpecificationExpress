@@ -4,7 +4,7 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <PackageId>SpecificationExpress</PackageId>
         <Authors>Francisco B. dos Santos</Authors>
-        <Version>1.0.0</Version>
+        <Version>1.5.0</Version>
         <PackageProjectUrl>https://github.com/francfbs/SpecificationExpress</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageDescription>Based on DDD principles, this package is a simple specification pattern c# implementation to validate business rules on your domain.</PackageDescription>
