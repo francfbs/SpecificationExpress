@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SpecificationExpress
 {
@@ -26,6 +27,16 @@ namespace SpecificationExpress
                 Errors.Add(new SpecificationError(obj.GetType().Name, rule.ErrorMessage));
             }
             return Errors;
+        }
+        
+        public async Task<List<SpecificationError>> ValidateAsync(T obj)
+        {
+            foreach (var rule in Rules)
+            {
+                if(!await rule.SpecificationAsync.IsSatisfiedBy(obj))
+                    Errors.Add(new SpecificationError(obj.GetType().Name, rule.ErrorMessage));
+            }
+            return await Task.FromResult(Errors);
         }
     }
 }
